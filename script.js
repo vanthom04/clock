@@ -1,26 +1,24 @@
-const dates = document.querySelector(".date");
-const times = document.querySelector(".time");
-
-const now = new Date();
-
+const $date = document.querySelector(".date");
+const $time = document.querySelector(".time");
 const dayOfWeeks = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
 
-function kt(value) {
-   return value < 10 ? `0${value}` : value;
+function padStart(value, length) {
+   return String(value).padStart(length, '0');
 }
 
-function timeUpdate() {
-   let hour = now.getHours();
-   let minute = now.getMinutes();
-   let second = now.getSeconds();
-   let day = now.getDate();
-   let month = now.getMonth() + 1;
-   let year = now.getFullYear();
-   let date = now.getDay();
+function update() {
+   const now = new Date();
+   const [
+      hours, minutes, seconds,
+      year, month, date, day
+   ] = [
+      now.getHours(), now.getMinutes(), now.getSeconds(),
+      now.getFullYear(), now.getMonth() + 1, now.getDate(), now.getDay()
+   ];
 
-   dates.innerText = `${dayOfWeeks[date]} ${kt(day)}/${kt(month)}/${kt(year)}`;
-   times.innerText = `${kt(hour)}:${kt(minute)}:${kt(second)}`;
+   $date.innerText = `${dayOfWeeks[day]} ${padStart(year, 4)}-${padStart(month, 2)}-${padStart(date, 2)}`;
+   $time.innerText = `${padStart(hours, 2)}:${padStart(minutes, 2)}:${padStart(seconds, 2)}`;
 }
 
-timeUpdate();
-setInterval(timeUpdate, 1000);
+update();
+setInterval(update, 1000);
