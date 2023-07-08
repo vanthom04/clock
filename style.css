@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+* {
+   margin: 0;
+   padding: 0;
+   outline: none;
+   user-select: none;
+}
+body {
+   width: 100%;
+   min-height: 100vh;
+   background: radial-gradient(ellipse at center, #0a2e38 0%, #000 35%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+}
+.clock {
+   font-family: 'Share Tech Mono', monospace;
+   color: #fff;
+   text-align: center;
+   text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+}
+.date {
+   letter-spacing: .1em;
+   font-size: 24px;
+}
+.time {
+   letter-spacing: .05em;
+   font-size: 80px;
+   padding: 5px 0;
+}
+.text {
+   letter-spacing: .1em;
+   font-size: 12px;
+   padding: 20px 0 0;
+}
