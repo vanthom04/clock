@@ -16,7 +16,7 @@ function update() {
       now.getFullYear(), now.getMonth() + 1, now.getDate(), now.getDay()
    ];
 
-   $date.innerText = `${dayOfWeeks[day]} ${padStart(year, 4)}-${padStart(month, 2)}-${padStart(date, 2)}`;
+   $date.innerText = `${dayOfWeeks[day]} ${padStart(date, 2)}-${padStart(month, 2)}-${padStart(year, 4)}`;
    $time.innerText = `${padStart(hours, 2)}:${padStart(minutes, 2)}:${padStart(seconds, 2)}`;
 }
 
